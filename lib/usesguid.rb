@@ -22,7 +22,7 @@ module ActiveRecord
           set_primary_key options[:column] if options[:column]
           
           def before_create
-            self.id ||= UUID.timestamp_create().to_s22
+            self.id ||= UUIDTools::UUID.timestamp_create().to_s
           end
         end        
         
